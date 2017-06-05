@@ -1,2 +1,25 @@
 ---
-# tasks file for HungryUp.desktop-webdev
+- name: "Install from homebrew"
+  homebrew:
+    name:
+      - node
+      - mongodb
+    state: present
+- name: "Install from homebrew cask"
+  homebrew_cask:
+    name:
+      - postman
+      - google-chrome-canary
+      - cyberduck
+    state: present
+
+- name: "Install from npm"
+  npm:
+    name:
+      - bower
+      - gulp-cli
+      - eslint
+      - ember-cli
+      - grunt-cli
+    global: yes
+    state: latest
