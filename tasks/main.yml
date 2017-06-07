@@ -13,13 +13,32 @@
       - cyberduck
     state: present
 
-- name: "Install from npm"
+- name: "Install bower"
   npm:
-    name:
-      - bower
-      - gulp-cli
-      - eslint
-      - ember-cli
-      - grunt-cli
+    name: bower
+    global: yes
+    state: latest
+
+- name: "Install gulp-cli"
+  npm:
+    name: gulp-cli
+    global: yes
+    state: latest
+
+- name: "Install eslint"
+  npm:
+    name: eslint
+    global: yes
+    state: latest
+
+- name: "Install ember-cli"
+  npm:
+    name: ember-cli
+    global: yes
+    state: latest
+
+- name: "Install grunt-cli"
+  npm:
+    name: grunt-cli
     global: yes
     state: latest
