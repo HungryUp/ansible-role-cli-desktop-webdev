@@ -5,6 +5,7 @@
       - node
       - mongodb
     state: present
+
 - name: "Install from homebrew cask"
   homebrew_cask:
     name:
@@ -15,11 +16,12 @@
 
 - name: "Install from npm"
   npm:
-    name:
+    name: "{{ item }}"
+    global: yes
+    state: latest
+    with_items:
       - bower
       - gulp-cli
       - eslint
       - ember-cli
       - grunt-cli
-    global: yes
-    state: latest
